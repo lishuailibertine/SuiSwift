@@ -38,7 +38,6 @@ final class SuiRPCS: XCTestCase {
         let reqeustExpectation = expectation(description: #function)
         
         self.client.getBalance(model: try! SuiRequestBalance(owner: SuiAddress(value: "0x3acadaf248b19e99626d4a506423cf073d4355788e82de2b7e9ad98acf4d6d27"))).done { balance in
-            print(BigInt(balance.totalBalance)?.description)
             reqeustExpectation.fulfill()
             
         }.catch { error in
