@@ -47,7 +47,7 @@ public struct SuiEd25519Keypair: SuiKeypair{
         try self.init(mnemonics: mnemonics, path: derivationPath.PATH())
     }
     public init(mnemonics: String, path: String) throws{
-        guard let seed = BIP39.seedFromMmemonics(mnemonics) else {
+        guard let seed = BIP39.seedFromMnemonics(mnemonics) else {
             throw SuiError.KeypairError.InvalidMnemonics
         }
         try self.init(seed: seed, path: path)
