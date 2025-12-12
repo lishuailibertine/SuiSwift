@@ -1,7 +1,4 @@
 //
-//  File.swift
-//  
-//
 //  Created by li shuai on 2023/4/18.
 //
 
@@ -31,11 +28,11 @@ public struct SuiSharedObjectRef{
     }
 }
 public struct SuiGasData{
-    var payment: [SuiObjectRef]
-    var owner: SuiAddress
-    var price: UInt64
-    var budget: UInt64
-    init(payment: [SuiObjectRef], owner: SuiAddress, price: UInt64 = 1, budget: UInt64 = 10000) {
+    public var payment: [SuiObjectRef]
+    public var owner: SuiAddress
+    public var price: UInt64
+    public var budget: UInt64
+    public init(payment: [SuiObjectRef], owner: SuiAddress, price: UInt64 = 1, budget: UInt64 = 10000) {
         self.payment = payment
         self.owner = owner
         self.price = price
@@ -68,10 +65,10 @@ public enum SuiTransactionKind{
     case ConsensusCommitPrologue
 }
 public struct SuiTransactionDataV1{
-    public let kind: SuiTransactionKind
-    public let sender: SuiAddress
-    public let gasData: SuiGasData
-    public let expiration: SuiTransactionExpiration
+    public var kind: SuiTransactionKind
+    public var sender: SuiAddress
+    public var gasData: SuiGasData
+    public var expiration: SuiTransactionExpiration
 }
 
 public enum SuiTransactionData{
